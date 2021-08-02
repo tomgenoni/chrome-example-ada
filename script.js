@@ -13,7 +13,8 @@ const tooltip = document.querySelector('#tooltip');
 // 3. Functions
 // --------------------------------------------------
 
-// This grabs the data. You can add error handling here if you want.
+// This is the function that gets called after the button is clicked and
+// retrieves the JSON data. You can add error handling here.
 async function fetchJson() {
   const response = await fetch(JSON_URL);
   const data = await response.json();
