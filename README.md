@@ -1,6 +1,6 @@
 # chrome-example-ada
 
-Example organization of simple Chrome extension.
+Example organization of CSS and JS in a simple Chrome extension.
 
 ## General notes
 
