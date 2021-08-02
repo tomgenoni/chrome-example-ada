@@ -2,9 +2,7 @@
 
 Example organization of simple Chrome extension.
 
-## File notes
-
-You can drag `popup.html` into a browser window and debug it there before adding it to the Chrome Extensions window.
+## General notes
 
 **`popup.html`**
 
