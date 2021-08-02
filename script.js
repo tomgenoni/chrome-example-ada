@@ -19,11 +19,18 @@ const generateBtnClick = () => {
   // This runs the function above to return the data.
   // You need to use `then` here because the async returns a promise.
   fetchJson().then((data) => {
-    // Set the value of the input to the "title" in the data
-    textInput.value = data.title;
-    textInput.addEventListener('click', copyText);
-    tooltip.classList.add('is-active');
+    // Pass just the "title" through from the data
+    updateUi(data.title);
   });
+};
+
+const updateUi = (title) => {
+  // Add the value to the input.
+  textInput.value = title;
+  // Now that the input has text we add an eventListner.
+  textInput.addEventListener('click', copyText);
+  // Turn on the tooltip.
+  tooltip.classList.add('is-active');
 };
 
 const copyText = () => {
