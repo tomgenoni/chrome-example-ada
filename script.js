@@ -15,6 +15,7 @@ const tooltip = document.querySelector('#tooltip');
 
 // This is the function that gets called after the button is clicked and
 // retrieves the JSON data. You can add error handling here.
+// https://dmitripavlutin.com/javascript-fetch-async-await/
 async function fetchJson() {
   const response = await fetch(JSON_URL);
   const data = await response.json();
