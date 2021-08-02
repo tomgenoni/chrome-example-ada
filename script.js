@@ -1,16 +1,21 @@
-// Elements
+// 1. Consts
+// --------------------------------------------------
+
+const JSON_URL = 'https://jsonplaceholder.typicode.com/todos/3';
+
+// 2. DOM Elements
 // --------------------------------------------------
 
 const generateBtn = document.querySelector('#generate-btn');
 const textInput = document.querySelector('#text-input');
 const tooltip = document.querySelector('#tooltip');
 
-// Functions
+// 3. Functions
 // --------------------------------------------------
 
 // This grabs the data. You can add error handling here if you want.
 async function fetchJson() {
-  const response = await fetch('https://jsonplaceholder.typicode.com/todos/3');
+  const response = await fetch(JSON_URL);
   const data = await response.json();
   return data;
 }
@@ -47,7 +52,7 @@ const copyText = () => {
   }, 2000);
 };
 
-// Event Handlers
+// 4. Event Handlers
 // --------------------------------------------------
 
 generateBtn.addEventListener('click', generateBtnClick);
