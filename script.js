@@ -34,6 +34,7 @@ const updateUi = (title) => {
 };
 
 const copyText = () => {
+  // Select the text in the input and copy it.
   textInput.select();
   document.execCommand('copy');
   // Change message in tooltip after text has been copied.
