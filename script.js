@@ -8,7 +8,7 @@ const tooltip = document.querySelector('#tooltip');
 // Functions
 // --------------------------------------------------
 
-// This grabs the data. You can add error handling here.
+// This grabs the data. You can add error handling here if you want.
 async function fetchJson() {
   const response = await fetch('https://jsonplaceholder.typicode.com/todos/3');
   const data = await response.json();
