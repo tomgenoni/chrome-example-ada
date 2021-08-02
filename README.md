@@ -1,23 +1,24 @@
 # chrome-example-ada
 
-Example organization of simple Chrome extension
+Example organization of simple Chrome extension.
 
 ## File notes
 
+You can drag `popup.html` into a browser window and debug it there before adding it to the Chrome Extensions window.
+
 **`popup.html`**
 
-- Any manual javascript that needs to hook into the HTML should load last. Here we're loading `script.js` right before the closing `</body>` tag. That way we don't need to use the `DOMContentLoaded` event listener in the JS.
-- If you're using any JS libraries you'd mostly likely load that in the `<head>`. Though sometimes for performance reasons you also load them last, above any custom code.
-- I use `class` exclusively for CSS styling and `id` exclusively for JavaScript hooks. This way you can change class names (mostly) without fear that you'll mess up your JavaScript. In frameworks like React you'll never need ids for styling and I haven't used them for styling for many years.
-- I don't usually add `onclick` handlers directly into the HTML, instead putting everything in the `script.js`. It's not a hard rule, I just find it easier if I'm not mixing `onclick` on some elements and `addEventListner` on others.
+- Any manual javascript that needs to hook into the DOM should load last in the HTML file. Here we're loading `script.js` right before the closing `</body>` tag. That way we don't have to use the `DOMContentLoaded` event listener in the JS because the DOM will be loaded.
+- I use `class` exclusively for CSS styling and `id` exclusively for JavaScript hooks. This way you can usually change class names without fear that you'll break JavaScript. And you can change id names without fear you'll break your CSS. In frameworks like React you'll never need ids for styling and I haven't used them in my CSS for many years.
+- I don't usually add `onclick` handlers directly into the HTML, instead putting everything in the `script.js`. It's not a hard rule, I just find it easier to not use `onclick` on some elements in the HTML and `addEventListner` for others in the JS.
 
 **`script.js`**
 
-This is the way I usually organize my JS files. I find it helps to orient myself in the code, especially if it starts to get long and if I'm having others look at or review it.
+This is the way I usually organize my custom JS files. I find it helps to orient myself in the code, especially if it starts to get long and if I'm having others look at or review it.
 
 1. In the first section I grab my elements from the DOM so they can be used throughout the file. Again, I exclusively use the `id` attribute for this.
 2. The second section will hold all the functions.
-3. Global event handlers go in the third section. We put them at the bottom because the functions they reference need to have been declared first, in our case in the second section.
+3. Global event handlers go in the third section. We put them at the bottom because the functions they reference need to have been declared first, in our case in the second section. Note that in `script.js` we're intentionally waiting to add an event handler for the `input` until after we get the data.
 
 ## Click to copy
 
