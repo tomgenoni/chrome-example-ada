@@ -42,6 +42,8 @@ const copyText = () => {
   // After a couple seconds remove the class that shows the tooltip.
   setTimeout(function () {
     tooltip.classList.remove('is-active');
+    // Return text back to original text.
+    tooltip.textContent = 'Click to copy';
   }, 2000);
 };
 
