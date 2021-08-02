@@ -31,7 +31,8 @@ body {
 }
 
 .tooltip {
-  display: none;
+  opacity: 0;
+  transition: opacity 300ms;
   background: #000;
   font-size: 11px;
   color: #fff;
@@ -57,5 +58,5 @@ body {
 }
 
 .tooltip.is-active {
-  display: block;
+  opacity: 1;
 }

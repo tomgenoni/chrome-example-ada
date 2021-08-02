@@ -2,7 +2,7 @@
 
 Example organization of simple Chrome extension
 
-## Notes
+## File notes
 
 **`popup.html`**
 
@@ -18,3 +18,9 @@ This is the way I usually organize my JS files. I find it helps to orient myself
 1. In the first section I grab my elements from the DOM so they can be used throughout the file. Again, I exclusively use the `id` attribute for this.
 2. The second section will hold all the functions.
 3. Global event handlers go in the third section. We put them at the bottom because the functions they reference need to have been declared first, in our case in the second section.
+
+## Click to copy
+
+I'm using an `input` here for the click-to-copy functionality. There are examples that use `<p>` or `<div>` but in the code are actually creating hidden `input` or `textarea` elements and doing the work. You can do it that way, it's just a bit more complicated.
+
+Note that the `input` has a `readonly` attribute. This will prevent the user from typing in the input.
